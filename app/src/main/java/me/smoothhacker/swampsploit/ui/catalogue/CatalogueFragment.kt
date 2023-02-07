@@ -1,4 +1,4 @@
-package me.smoothhacker.swampsploit.ui.slideshow
+package me.smoothhacker.swampsploit.ui.catalogue
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import me.smoothhacker.swampsploit.databinding.FragmentSlideshowBinding
+import me.smoothhacker.swampsploit.databinding.FragmentGalleryBinding
 
-class SlideshowFragment : Fragment() {
+class CatalogueFragment : Fragment() {
 
-    private var _binding: FragmentSlideshowBinding? = null
+    private var _binding: FragmentGalleryBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class SlideshowFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
+        val catalogueViewModel =
+            ViewModelProvider(this)[CatalogueViewModel::class.java]
 
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
+        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textGallery
+        catalogueViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

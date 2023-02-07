@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="me.smoothhacker.swampsploit.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:name="me.smoothhacker.swampsploit.ui.catalogue.CatalogueFragment"
+        android:label="@string/menu_exploits"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="me.smoothhacker.swampsploit.ui.slideshow.SlideshowFragment"
+        android:name="me.smoothhacker.swampsploit.ui.reports.ReportsFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
