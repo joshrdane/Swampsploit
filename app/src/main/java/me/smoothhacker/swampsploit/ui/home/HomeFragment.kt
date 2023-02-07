@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -31,6 +32,27 @@ class HomeFragment : Fragment() {
         val textView: TextView = binding.textView4
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+
+        // Set Dashboard text
+        val librarySizeTextView: Button = binding.LibrarySizeTextView
+        homeViewModel.librarySize.observe(viewLifecycleOwner) {
+           librarySizeTextView.text = it
+        }
+
+        val payloadSizeTextview: Button = binding.PayloadSizeTextview
+        homeViewModel.payloadSize.observe(viewLifecycleOwner) {
+            payloadSizeTextview.text = it
+        }
+
+        val registeredTargetsTextView: Button = binding.RegisteredTargetsTextView
+        homeViewModel.registeredTargets.observe(viewLifecycleOwner) {
+            registeredTargetsTextView.text = it
+        }
+
+        val pastAttemptsTextView: Button = binding.PastAttemptsTextView
+        homeViewModel.pastAttempts.observe(viewLifecycleOwner) {
+            pastAttemptsTextView.text = it
         }
         return root
     }
