@@ -10,7 +10,8 @@
         android:icon="@drawable/ic_fort_24"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Swampsploit">
+        android:theme="@style/Theme.Swampsploit"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".BootScreen"
             android:exported="true">
