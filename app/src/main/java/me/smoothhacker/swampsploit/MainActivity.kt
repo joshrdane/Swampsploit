@@ -1,7 +1,9 @@
 package me.smoothhacker.swampsploit
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -42,6 +44,21 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val homeButton = findViewById<Button>(R.id.nav_home)
+        homeButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        val exploitsButton = findViewById<Button>(R.id.nav_gallery)
+        exploitsButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        val reportsButton = findViewById<Button>(R.id.nav_slideshow)
+        reportsButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
