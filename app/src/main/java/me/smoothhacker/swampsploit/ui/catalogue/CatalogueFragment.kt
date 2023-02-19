@@ -1,13 +1,14 @@
 package me.smoothhacker.swampsploit.ui.catalogue
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import me.smoothhacker.swampsploit.databinding.FragmentGalleryBinding
+import me.smoothhacker.swampsploit.ui.exploit.ExploitActivity
 
 class CatalogueFragment : Fragment() {
 
@@ -29,13 +30,13 @@ class CatalogueFragment : Fragment() {
         val root: View = binding.root
 
         binding.ProFTPDButton.setOnClickListener {
-            
+            startActivity(Intent(this.context, ExploitActivity::class.java))
         }
 
-        val textView: TextView = binding.exploitText
+        /*val textView: TextView = binding.exploitText
         catalogueViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-        }
+        }*/
         return root
     }
 
