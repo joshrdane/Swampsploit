@@ -34,9 +34,8 @@ class HostScanner : Fragment() {
         if (hostsListFile!!.exists())
             hostsListFile!!.forEachLine { tcpScanner.addHost(it) }
 
-        binding.addTargetSubmit.setOnClickListener {
-            val ipAddrText = binding.editTextIpAddrTarget.text
-            tcpScanner.addHost(ipAddrText.toString())
+        binding.setPortButton.setOnClickListener {
+            tcpScanner.setTargetPort(binding.editTextNumber.text.toString().toInt())
         }
 
         return root

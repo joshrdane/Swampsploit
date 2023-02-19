@@ -9,9 +9,14 @@ import java.net.NetworkInterface.getNetworkInterfaces
 
 class tcpScanner {
     private val hostList: ArrayList<String> = ArrayList()
+    private var targetPort: Int = 22
 
     fun addHost(host: String) {
         this.hostList.add(host)
+    }
+
+    fun setTargetPort(port: Int) {
+        this.targetPort = port
     }
 
     private fun getLocalIPAddress(): InterfaceAddress? {
@@ -42,9 +47,8 @@ class tcpScanner {
         Thread {
             for (ip in utils.info.allAddresses) {
                 try {
-                    val socket = Socket(ip, 80)
+                    val socket = Socket(ip, targetPort)
                     socket.close()
-
                 } catch (ex: Exception) {
                     println("%s failed to connect".format(ip))
                     continue
