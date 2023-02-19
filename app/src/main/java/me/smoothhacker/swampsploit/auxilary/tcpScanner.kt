@@ -1,7 +1,5 @@
-package me.smoothhacker.swampsploit.aux
+package me.smoothhacker.swampsploit.auxilary
 
-import android.os.StrictMode
-import android.os.StrictMode.ThreadPolicy
 import org.apache.commons.net.util.SubnetUtils
 import java.net.*
 import java.net.NetworkInterface.getNetworkInterfaces

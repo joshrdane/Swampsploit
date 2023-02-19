@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import me.smoothhacker.swampsploit.aux.tcpScanner
+import me.smoothhacker.swampsploit.auxilary.tcpScanner
 import me.smoothhacker.swampsploit.databinding.FragmentHostScannerBinding
 import java.io.File
 
