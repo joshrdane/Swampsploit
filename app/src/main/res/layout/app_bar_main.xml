@@ -8,13 +8,13 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="15dp"
+        android:layout_height="wrap_content"
         android:theme="@style/Theme.Swampsploit.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="38dp"
             android:background="@color/maroon"
             app:popupTheme="@style/Theme.Swampsploit.PopupOverlay" />
 

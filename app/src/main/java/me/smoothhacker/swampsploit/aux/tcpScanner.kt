@@ -1,0 +1,56 @@
+package me.smoothhacker.swampsploit.aux
+
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
+import org.apache.commons.net.util.SubnetUtils
+import java.net.*
+import java.net.NetworkInterface.getNetworkInterfaces
+
+
+class tcpScanner {
+    private val hostList: ArrayList<String> = ArrayList()
+
+    fun addHost(host: String) {
+        this.hostList.add(host)
+    }
+
+    private fun getLocalIPAddress(): InterfaceAddress? {
+        try {
+            for (enumIpAddr in getNetworkInterfaces()) {
+                if (enumIpAddr.isLoopback)
+                    continue
+                // Iterate trough IPs
+                for (IpAddr in enumIpAddr.inetAddresses) {
+                    if (!IpAddr.isLoopbackAddress && IpAddr is Inet4Address) {
+                        return enumIpAddr.interfaceAddresses.find { it.address == IpAddr }
+                    }
+                }
+            }
+        } catch (ex: SocketException) {
+            ex.printStackTrace()
+        }
+        return null
+    }
+
+    fun scanForHosts(): Boolean {
+        val ipInterface: InterfaceAddress = getLocalIPAddress()!!
+
+        // check for networks that have more than 64k hosts
+        if (32 - ipInterface.networkPrefixLength > 24) return false
+        val utils = SubnetUtils("%s/%d".format(ipInterface.address.hostAddress, 32 - ipInterface.networkPrefixLength))
+
+        Thread {
+            for (ip in utils.info.allAddresses) {
+                try {
+                    val socket = Socket(ip, 80)
+                    socket.close()
+
+                } catch (ex: Exception) {
+                    println("%s failed to connect".format(ip))
+                    continue
+                }
+            }
+        }.start()
+        return true
+    }
+}
