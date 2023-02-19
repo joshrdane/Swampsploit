@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Swampsploit.AppBarOverlay" >
 
         <TextView
-            android:id="@+id/title_text"
+            android:id="@+id/exploitText"
             android:layout_width="354dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
