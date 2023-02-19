@@ -28,6 +28,10 @@ class CatalogueFragment : Fragment() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.ProFTPDButton.setOnClickListener {
+            
+        }
+
         val textView: TextView = binding.exploitText
         catalogueViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
