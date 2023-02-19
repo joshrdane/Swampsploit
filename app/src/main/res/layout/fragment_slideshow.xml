@@ -6,17 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".ui.reports.ReportsFragment">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:theme="@style/Theme.Swampsploit.AppBarOverlay" >
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:drawableLeft="@drawable/baseline_back_arrow"
+            android:drawableRight="@drawable/baseline_search_white_24dp"
+            android:drawablePadding="20.0dp"
+            android:text="Past Reports"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/sortBy"
+        android:layout_width="415dp"
+        android:layout_height="35dp"
+        android:layout_margin="15dp"
+        android:background="@color/salmon"
+        android:drawableRight="@drawable/baseline_sort_white_24dp"
+        android:drawablePadding="5.0dp"
+        android:text="Sort By"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/recentReport"
+        android:layout_width="423dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/offWhite"
+        android:text="Thu Feb 16 2023 00:54:46 GMT-0500"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sortBy"
+        app:layout_constraintVertical_bias="0.361" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

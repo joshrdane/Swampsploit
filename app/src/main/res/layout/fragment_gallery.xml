@@ -6,17 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".ui.catalogue.CatalogueFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
+    <!--com.google.android.material.appbar.AppBarLayout>
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:theme="@style/Theme.Swampsploit.AppBarOverlay" >
+
+        <TextView
+            android:id="@+id/exploitText"
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:drawableLeft="@drawable/baseline_back_arrow"
+            android:drawableRight="@drawable/baseline_search_white_24dp"
+            android:drawablePadding="20.0dp"
+            android:text="Exploits"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </com.google.android.material.appbar.AppBarLayout-->
+
+    <Button
+        android:id="@+id/ProFTPD_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="604dp"
+        android:text="ProFTPD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/ProFTPD_category"
+        android:layout_width="404dp"
+        android:layout_height="40dp"
+        android:layout_margin="0dp"
+        android:background="@color/offWhite"
+        android:text="mod_copy command execution "
+        android:textAlignment="center"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/OpenSMTPD_button"
+        app:layout_constraintEnd_toEndOf="@+id/ProFTPD_button"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProFTPD_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ProFTPD_desc"
+        android:layout_width="402dp"
+        android:layout_height="69dp"
+        android:layout_margin="0dp"
+        android:background="@color/offWhite"
+        android:text="Any unauthenticated client can use commands to copy files from any part of the filesystem to a chosen destination."
+        android:textAlignment="center"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/OpenSMTPD_button"
+        app:layout_constraintEnd_toEndOf="@+id/ProFTPD_category"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProFTPD_category"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/OpenSMTPD_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="313dp"
+        android:text="OpenSMTPD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProFTPD_button"
+        app:layout_constraintVertical_bias="0.444" />
+
+    <TextView
+        android:id="@+id/OpenSMTPD_category"
+        android:layout_width="404dp"
+        android:layout_height="40dp"
+        android:layout_margin="0dp"
+        android:background="@color/offWhite"
+        android:text="remote code execution "
+        android:textAlignment="center"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Netatalk_button"
+        app:layout_constraintEnd_toEndOf="@+id/OpenSMTPD_button"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OpenSMTPD_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/OpenSMTPD_desc"
+        android:layout_width="406dp"
+        android:layout_height="74dp"
+        android:layout_margin="0dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/offWhite"
+        android:text="Exploit a command injection in the MAIL FROM field during SMTP interaction with OpenSMTPD to execute a command as the root user."
+        android:textAlignment="center"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ProFTPD_category"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ProFTPD_category"
+        app:layout_constraintTop_toBottomOf="@+id/OpenSMTPD_category" />
+
+    <Button
+        android:id="@+id/Netatalk_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="284dp"
+        android:text="Netatalk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OpenSMTPD_desc"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/Netatalk_category"
+        android:layout_width="423dp"
+        android:layout_height="40dp"
+        android:layout_margin="0dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/offWhite"
+        android:text="authentication bypass"
+        android:textAlignment="center"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ProFTPD_category"
+        app:layout_constraintStart_toStartOf="@+id/ProFTPD_category"
+        app:layout_constraintTop_toBottomOf="@+id/Netatalk_button" />
+
+    <TextView
+        android:id="@+id/Netatalk_desc"
+        android:layout_width="406dp"
+        android:layout_height="74dp"
+        android:layout_margin="0dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/offWhite"
+        android:text="Exploit a buffer overflow when handling an OpenSession request in the Apple Filing Protocol (AFP) server running on the remote host."
+        android:textAlignment="center"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ProFTPD_category"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ProFTPD_category"
+        app:layout_constraintTop_toBottomOf="@+id/Netatalk_category" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

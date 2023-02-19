@@ -26,6 +26,11 @@
             android:exported="true"
             android:theme="@style/Theme.Swampsploit.NoActionBar">
         </activity>
+        <activity
+            android:name=".ui.exploit.ExploitActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Swampsploit.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
