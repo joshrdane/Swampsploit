@@ -53,6 +53,7 @@ class tcpScanner {
                     println("%s failed to connect".format(ip))
                     continue
                 }
+                hostList.add(ip)
             }
         }.start()
         return true
