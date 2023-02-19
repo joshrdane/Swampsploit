@@ -1,8 +1,11 @@
 package me.smoothhacker.swampsploit.auxilary
 
 import org.apache.commons.net.util.SubnetUtils
-import java.net.*
+import java.net.Inet4Address
+import java.net.InterfaceAddress
 import java.net.NetworkInterface.getNetworkInterfaces
+import java.net.Socket
+import java.net.SocketException
 
 
 class tcpScanner {
