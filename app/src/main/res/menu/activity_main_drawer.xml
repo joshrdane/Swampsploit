@@ -16,5 +16,9 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/baseline_library_books_24"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_hostscanner"
+            android:icon="@drawable/baseline_perm_scan_wifi_24"
+            android:title="@string/menu_hostscanner" />
     </group>
 </menu>
