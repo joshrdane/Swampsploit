@@ -11,4 +11,6 @@
     <string name="menu_exploits">Exploits</string>
     <string name="menu_slideshow">Past Reports</string>
     <string name="menu_hostscanner">Host Scanner</string>
+
+    <string name="exploit_proftpd">ProFTPd</string>
 </resources>

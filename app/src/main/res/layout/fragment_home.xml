@@ -6,32 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <!--com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Swampsploit.AppBarOverlay" >
-
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:drawableLeft="@drawable/baseline_menu_white_24dp"
-            android:drawableRight="@drawable/baseline_more_vert_white_24dp"
-            android:drawablePadding="25.0dp"
-            android:text="Home"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-    </com.google.android.material.appbar.AppBarLayout-->
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
