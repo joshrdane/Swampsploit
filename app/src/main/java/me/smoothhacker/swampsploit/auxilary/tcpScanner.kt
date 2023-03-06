@@ -56,6 +56,8 @@ class tcpScanner {
                 }
                 hostList.add(ip)
             }
+
+
         }.start()
         return true
     }
