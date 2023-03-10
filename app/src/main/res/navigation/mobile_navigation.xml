@@ -27,9 +27,4 @@
         android:name="me.smoothhacker.swampsploit.ui.scanner.HostScanner"
         android:label="@string/menu_hostscanner"
         tools:layout="@layout/fragment_host_scanner" />
-    <fragment
-        android:id="@+id/nav_proftpd"
-        android:name="me.smoothhacker.swampsploit.ui.exploit.ExploitActivity"
-        android:label="@string/exploit_proftpd"
-        tools:layout="@layout/activity_exploit" />
 </navigation>
