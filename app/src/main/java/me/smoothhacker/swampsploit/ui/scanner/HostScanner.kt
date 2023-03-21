@@ -34,8 +34,14 @@ class HostScanner : Fragment() {
         if (hostsListFile!!.exists())
             hostsListFile!!.forEachLine { tcpScanner.addHost(it) }
 
-        binding.setPortButton.setOnClickListener {
-            tcpScanner.setTargetPort(binding.editTextNumber.text.toString().toInt())
+        binding.buttonSetPort.setOnClickListener {
+            tcpScanner.setTargetPort(binding.editTextPort.text.toString().toInt())
+            binding.editTextPort.text.clear()
+        }
+
+        binding.buttonSetIP.setOnClickListener {
+            tcpScanner.addHost(binding.editTextIpAddr.text.toString())
+            binding.editTextIpAddr.text.clear()
         }
 
         return root
