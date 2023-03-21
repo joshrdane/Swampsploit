@@ -18,26 +18,56 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
+        android:id="@+id/editTextPort"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="173dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="174dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/setPortButton"
-        app:layout_constraintEnd_toStartOf="@+id/setPortButton"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSetPort"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Port" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="22" />
 
     <Button
-        android:id="@+id/setPortButton"
+        android:id="@+id/buttonSetPort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="19dp"
+        android:layout_marginEnd="42dp"
         android:text="Set Port"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPort"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/editTextPort" />
+
+    <EditText
+        android:id="@+id/editTextIpAddr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="192.168.1.12"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSetPort"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSetIP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonSetIP" />
+
+    <Button
+        android:id="@+id/buttonSetIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="13dp"
+        android:text="SET IP"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSetPort"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextIpAddr" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
