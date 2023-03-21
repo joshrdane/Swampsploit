@@ -9,11 +9,11 @@
             android:icon="@drawable/baseline_home_24"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_exploit_gallery"
             android:icon="@drawable/baseline_bug_report_24"
             android:title="@string/menu_exploits" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_reports"
             android:icon="@drawable/baseline_library_books_24"
             android:title="@string/menu_slideshow" />
         <item
