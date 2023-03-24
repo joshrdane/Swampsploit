@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.exploit.ExploitActivity">
+    tools:context=".ui.exploit.NetatalkActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
         android:layout_width="399dp"
         android:layout_height="116dp"
         android:background="@color/offWhite"
-        android:text="Any unauthenticated client can use commands to copy files from any part of the filesystem to a chosen destination. \n\nThe copy commands are executed with the rights of the ProFTPD service, which runs under the privileges of the 'nobody' user by default.\n\n"
+        android:text="Netatalk before 3.1.12 is vulnerable to an out of bounds write in dsi_opensess.c. This is due to lack of bounds checking on attacker controlled data. \n\nA remote unauthenticated attacker can leverage this vulnerability to achieve arbitrary code execution.\n\n"
         android:textColor="@color/maroon"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/description_header"

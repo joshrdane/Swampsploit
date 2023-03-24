@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import me.smoothhacker.swampsploit.databinding.FragmentExploitGalleryBinding
 import me.smoothhacker.swampsploit.ui.exploit.ExploitActivity
+import me.smoothhacker.swampsploit.ui.exploit.NetatalkActivity
 
 class CatalogueFragment : Fragment() {
 
@@ -31,6 +32,10 @@ class CatalogueFragment : Fragment() {
 
         binding.ProFTPDButton.setOnClickListener {
             startActivity(Intent(this.context, ExploitActivity::class.java))
+        }
+
+        binding.NetatalkButton.setOnClickListener {
+            startActivity(Intent(this.context, NetatalkActivity::class.java))
         }
 
         /*val textView: TextView = binding.exploitText
