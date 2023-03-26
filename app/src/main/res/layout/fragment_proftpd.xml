@@ -163,7 +163,7 @@
         app:layout_constraintTop_toBottomOf="@+id/temp_path_input" />
 
     <Button
-        android:id="@+id/exploit_button"
+        android:id="@+id/proftpd_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exploit"

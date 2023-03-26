@@ -149,11 +149,11 @@
 
 
     <Button
-        android:id="@+id/exploit_button"
+        android:id="@+id/netatalk_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exploit"
-        app:layout_constraintStart_toStartOf="@+id/site_path_input"
-        app:layout_constraintTop_toBottomOf="@+id/site_path_input" />
+        app:layout_constraintStart_toStartOf="@+id/file_name_input"
+        app:layout_constraintTop_toBottomOf="@+id/file_name_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
