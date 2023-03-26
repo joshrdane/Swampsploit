@@ -133,13 +133,13 @@
         app:layout_constraintTop_toBottomOf="@+id/port_number_input" />
 
     <EditText
-        android:id="@+id/temp_path_input"
+        android:id="@+id/file_name_input"
         android:layout_width="303dp"
         android:layout_height="27dp"
         android:background="@color/offWhite"
         android:ems="10"
         android:inputType="text"
-        android:text="Temporary path (Eg. /tmp)"
+        android:text="File name (Eg. New File)"
         android:textSize="14dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/timeout_input"
@@ -147,20 +147,6 @@
         app:layout_constraintStart_toStartOf="@+id/timeout_input"
         app:layout_constraintTop_toBottomOf="@+id/timeout_input" />
 
-    <EditText
-        android:id="@+id/site_path_input"
-        android:layout_width="303dp"
-        android:layout_height="27dp"
-        android:background="@color/offWhite"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Site path (Eg. /var/www/html)"
-        android:textSize="14dp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="@+id/temp_path_input"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/temp_path_input"
-        app:layout_constraintTop_toBottomOf="@+id/temp_path_input" />
 
     <Button
         android:id="@+id/exploit_button"
