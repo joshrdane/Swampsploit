@@ -27,7 +27,7 @@
         android:layout_width="399dp"
         android:layout_height="116dp"
         android:background="@color/offWhite"
-        android:text="Any unauthenticated client can use commands to copy files from any part of the filesystem to a chosen destination. \n\nThe copy commands are executed with the rights of the ProFTPD service, which runs under the privileges of the 'nobody' user by default.\n\n"
+        android:text="The Apple Filing Protocol (AFP) server running on the remote host is affected by a remote code execution vulnerability due to a buffer overflow condition when handling an OpenSession request. \nAn unauthenticated, remote attacker can exploit this issue, via a specially crafted message, to execute arbitrary code.\n\n"
         android:textColor="@color/maroon"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/description_header"
@@ -55,7 +55,7 @@
         android:layout_marginTop="28dp"
         android:background="@color/offWhite"
         android:checked="true"
-        android:text="`touch PoCFile`"
+        android:text="Open unauthorized session"
         app:layout_constraintEnd_toEndOf="@+id/description"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/description"
@@ -133,13 +133,13 @@
         app:layout_constraintTop_toBottomOf="@+id/port_number_input" />
 
     <EditText
-        android:id="@+id/temp_path_input"
+        android:id="@+id/file_name_input"
         android:layout_width="303dp"
         android:layout_height="27dp"
         android:background="@color/offWhite"
         android:ems="10"
         android:inputType="text"
-        android:text="Temporary path (Eg. /tmp)"
+        android:text="File name (Eg. New File)"
         android:textSize="14dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/timeout_input"
@@ -147,20 +147,6 @@
         app:layout_constraintStart_toStartOf="@+id/timeout_input"
         app:layout_constraintTop_toBottomOf="@+id/timeout_input" />
 
-    <EditText
-        android:id="@+id/site_path_input"
-        android:layout_width="303dp"
-        android:layout_height="27dp"
-        android:background="@color/offWhite"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Site path (Eg. /var/www/html)"
-        android:textSize="14dp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="@+id/temp_path_input"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/temp_path_input"
-        app:layout_constraintTop_toBottomOf="@+id/temp_path_input" />
 
     <Button
         android:id="@+id/netatalk_button"
