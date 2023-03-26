@@ -29,8 +29,17 @@ class CatalogueFragment : Fragment() {
         _binding = FragmentExploitGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
         binding.ProFTPDButton.setOnClickListener {
-            startActivity(Intent(this.context, ExploitActivity::class.java))
+            val proftpdIntent = Intent(this.context,  ExploitActivity::class.java)
+            proftpdIntent.putExtra("selectedExploit", "Proftpd")
+            startActivity(proftpdIntent)
+        }
+
+        binding.NetatalkButton.setOnClickListener {
+            val netatalkIntent = Intent(this.context,  ExploitActivity::class.java)
+            netatalkIntent.putExtra("selectedExploit", "Netatalk")
+            startActivity(netatalkIntent)
         }
 
         /*val textView: TextView = binding.exploitText

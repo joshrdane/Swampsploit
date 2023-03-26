@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.exploit.NetatalkActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.Swampsploit.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/exploit_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:background="@color/maroon"
+            app:popupTheme="@style/Theme.Swampsploit.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/description_header"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:background="@color/offWhite"
+        android:text="\nDescription"
+        android:textColor="@color/maroon"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="399dp"
+        android:layout_height="116dp"
+        android:background="@color/offWhite"
+        android:text="Netatalk before 3.1.12 is vulnerable to an out of bounds write in dsi_opensess.c. This is due to lack of bounds checking on attacker controlled data. \n\nA remote unauthenticated attacker can leverage this vulnerability to achieve arbitrary code execution.\n\n"
+        android:textColor="@color/maroon"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/description_header"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/description_header"
+        app:layout_constraintTop_toBottomOf="@+id/description_header" />
+
+    <TextView
+        android:id="@+id/payload_header"
+        android:layout_width="399dp"
+        android:layout_height="28dp"
+        android:background="@color/offWhite"
+        android:text="Payloads"
+        android:textColor="@color/maroon"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/description"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <CheckBox
+        android:id="@+id/chk1"
+        android:layout_width="399dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/offWhite"
+        android:checked="true"
+        android:text="`touch PoCFile`"
+        app:layout_constraintEnd_toEndOf="@+id/description"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <CheckBox
+        android:id="@+id/chk2"
+        android:layout_width="399dp"
+        android:layout_height="43dp"
+        android:background="@color/offWhite"
+        android:checked="false"
+        android:text="TBD"
+        app:layout_constraintEnd_toEndOf="@+id/chk1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/chk1"
+        app:layout_constraintTop_toBottomOf="@+id/chk1" />
+
+    <TextView
+        android:id="@+id/parameter_header"
+        android:layout_width="399dp"
+        android:layout_height="28dp"
+        android:background="@color/offWhite"
+        android:text="Parameters"
+        android:textColor="@color/maroon"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/chk2"
+        app:layout_constraintStart_toStartOf="@+id/chk2"
+        app:layout_constraintTop_toBottomOf="@+id/chk2" />
+
+    <EditText
+        android:id="@+id/ip_address_input"
+        android:layout_width="303dp"
+        android:layout_height="27dp"
+        android:background="@color/offWhite"
+        android:ems="10"
+        android:inputType="text"
+        android:text="IP Address"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/parameter_header"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/parameter_header"
+        app:layout_constraintTop_toBottomOf="@+id/parameter_header" />
+
+    <EditText
+        android:id="@+id/port_number_input"
+        android:layout_width="303dp"
+        android:layout_height="27dp"
+        android:background="@color/offWhite"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Port number (Eg: 21)"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/ip_address_input"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ip_address_input"
+        app:layout_constraintTop_toBottomOf="@+id/ip_address_input" />
+
+
+    <EditText
+        android:id="@+id/timeout_input"
+        android:layout_width="303dp"
+        android:layout_height="27dp"
+        android:background="@color/offWhite"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Timeout limit (Eg: 1000)"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/port_number_input"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/port_number_input"
+        app:layout_constraintTop_toBottomOf="@+id/port_number_input" />
+
+    <EditText
+        android:id="@+id/temp_path_input"
+        android:layout_width="303dp"
+        android:layout_height="27dp"
+        android:background="@color/offWhite"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Temporary path (Eg. /tmp)"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/timeout_input"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/timeout_input"
+        app:layout_constraintTop_toBottomOf="@+id/timeout_input" />
+
+    <EditText
+        android:id="@+id/site_path_input"
+        android:layout_width="303dp"
+        android:layout_height="27dp"
+        android:background="@color/offWhite"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Site path (Eg. /var/www/html)"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/temp_path_input"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/temp_path_input"
+        app:layout_constraintTop_toBottomOf="@+id/temp_path_input" />
+
+    <Button
+        android:id="@+id/exploit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exploit"
+        app:layout_constraintStart_toStartOf="@+id/site_path_input"
+        app:layout_constraintTop_toBottomOf="@+id/site_path_input" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
