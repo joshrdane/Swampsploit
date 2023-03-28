@@ -1,9 +1,10 @@
 package me.smoothhacker.swampsploit
 
+import kotlinx.serialization.cbor.Cbor
 import me.smoothhacker.swampsploit.utils.ExploitContext
-
+import me.smoothhacker.swampsploit.utils.ExploitContextSerializer
+import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.junit.Assert.*
 import java.io.File
 
 class ExploitContextTests {
@@ -15,7 +16,7 @@ class ExploitContextTests {
         ctx.setTimeout(1000)
         ctx.addHost("192.168.1.255")
 
-        ctx.save()
+        Cbor.encodeToByteArray(ExploitContextSerializer, ctx)
 
         val newCtx = ExploitContext(dataFile)
         assertEquals(newCtx.getPort(), ctx.getPort())
