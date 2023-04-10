@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reports_dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="2.5dp"
+    android:paddingRight="2.5dp"
+    android:orientation="vertical"
     tools:context=".ui.reports.ReportsFragment">
 
     <TextView
         android:id="@+id/sortBy"
-        android:layout_width="415dp"
-        android:layout_height="35dp"
+        android:layout_width="380dp"
+        android:layout_height="33dp"
         android:layout_margin="15dp"
-        android:background="@color/salmon"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/rounded_light_maroon_textview"
         android:drawableRight="@drawable/baseline_sort_white_24dp"
         android:drawablePadding="5.0dp"
-        android:text="Sort By"
+        android:paddingLeft="20dp"
+        android:paddingTop="2.5dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="2dp"
+        android:text="Sort by: recently completed"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="0dp" />
+        android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/recentReport"
-        android:layout_width="423dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="44dp"
-        android:background="@color/offWhite"
-        android:text="Thu Feb 16 2023 00:54:46 GMT-0500"
-        android:textColor="@color/maroon"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sortBy"
-        app:layout_constraintVertical_bias="0.361" />
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="39dp"
+        android:gravity="center_vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/recentReport"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_teal_textview"
+            android:paddingLeft="10dp"
+            android:paddingTop="1.0dp"
+            android:paddingBottom="1.0dp"
+            android:text="<temporarily blank>"
+            android:textColor="@color/navyGreen"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

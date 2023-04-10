@@ -9,22 +9,26 @@
         android:id="@+id/nav_home"
         android:name="me.smoothhacker.swampsploit.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home"
+        android:background="@color/offWhite"/>
 
     <fragment
         android:id="@+id/nav_exploit_gallery"
         android:name="me.smoothhacker.swampsploit.ui.catalogue.CatalogueFragment"
         android:label="@string/menu_exploits"
-        tools:layout="@layout/fragment_exploit_gallery" />
+        tools:layout="@layout/fragment_exploit_gallery"
+        android:background="@color/offWhite"/>
 
     <fragment
         android:id="@+id/nav_reports"
         android:name="me.smoothhacker.swampsploit.ui.reports.ReportsFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_reports" />
+        tools:layout="@layout/fragment_reports"
+        android:background="@color/offWhite"/>
     <fragment
         android:id="@+id/nav_hostscanner"
         android:name="me.smoothhacker.swampsploit.ui.scanner.HostScanner"
         android:label="@string/menu_hostscanner"
-        tools:layout="@layout/fragment_host_scanner" />
+        tools:layout="@layout/fragment_host_scanner"
+        android:background="@color/offWhite"/>
 </navigation>
