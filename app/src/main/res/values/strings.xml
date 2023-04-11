@@ -13,4 +13,6 @@
     <string name="menu_hostscanner">Host Scanner</string>
 
     <string name="exploit_proftpd">ProFTPd</string>
+
+    <string name="reports_empty">No exploit engagements have been made.</string>
 </resources>
