@@ -25,25 +25,24 @@
         android:text="Sort by: recently completed"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="26dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/recentReport"
-            android:layout_width="400dp"
-            android:layout_height="25dp"
-            android:background="@drawable/rounded_teal_textview"
-            android:paddingLeft="10dp"
-            android:paddingBottom="1.0dp"
-            android:text="<temporarily blank>"
-            android:textColor="@color/navyGreen"
-            android:textSize="16sp"
-            android:layout_margin="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/sortBy"
-            tools:layout_editor_absoluteX="5dp"
-            tools:layout_editor_absoluteY="133dp" />
+    <TextView
+        android:id="@+id/recentReport"
+        android:layout_width="400dp"
+        android:layout_height="25dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_teal_textview"
+        android:paddingLeft="10dp"
+        android:paddingBottom="1.0dp"
+        android:text="temporarily blank"
+        android:textColor="@color/navyGreen"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/sortBy"
+        app:layout_constraintEnd_toEndOf="@+id/sortBy"
+        app:layout_constraintTop_toBottomOf="@+id/sortBy" />
 
         <FrameLayout
             android:id="@+id/child_fragment_container"

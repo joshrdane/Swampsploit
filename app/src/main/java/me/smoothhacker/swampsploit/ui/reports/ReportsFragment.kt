@@ -48,7 +48,7 @@ class ReportsFragment : Fragment() {
         else {
             if (fileList != null) {
                 // TODO: grab date/time from most recent report and fill below text with fileList[0]
-                recentReport.text = ""
+                recentReport.text = "testing"
                 recentReport.setOnClickListener {
                     // launch new fragment to display report details
                    createChildFragment()
@@ -103,7 +103,7 @@ class ReportsFragment : Fragment() {
         _binding = null
     }
 
-    fun createChildFragment() {
+    private fun createChildFragment() {
         // TODO: figure out how to pass report file to fragment constructor
         val nestedReportsFragment: Fragment = ReportDetailsFragment()
         val transaction: FragmentTransaction = childFragmentManager.beginTransaction()

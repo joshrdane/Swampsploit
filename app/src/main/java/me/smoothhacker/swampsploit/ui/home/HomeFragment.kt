@@ -45,30 +45,30 @@ class HomeFragment : Fragment() {
         }
 
         // Set Dashboard text
-        val librarySizeTextView: Button = binding.LibrarySizeTextView
-        homeViewModel.librarySize.observe(viewLifecycleOwner) {
-           librarySizeTextView.text = it
-        }
-
-        val payloadSizeTextview: Button = binding.PayloadSizeTextview
-        homeViewModel.payloadSize.observe(viewLifecycleOwner) {
-            payloadSizeTextview.text = it
-        }
-
-        val registeredTargetsTextView: Button = binding.RegisteredTargetsTextView
-        homeViewModel.registeredTargets.observe(viewLifecycleOwner) {
-            registeredTargetsTextView.text = it
-        }
-
-        val pastAttemptsTextView: Button = binding.PastAttemptsTextView
-        homeViewModel.pastAttempts.observe(viewLifecycleOwner) {
-            pastAttemptsTextView.text = it
-        }
+        // TODO: change text dynamically? think about what to replace this with?
+//        val librarySizeTextView: Button = binding.LibrarySizeTextView
+//        homeViewModel.librarySize.observe(viewLifecycleOwner) {
+//           librarySizeTextView.text = it
+//        }
+//
+//        val payloadSizeTextview: Button = binding.PayloadSizeTextview
+//        homeViewModel.payloadSize.observe(viewLifecycleOwner) {
+//            payloadSizeTextview.text = it
+//        }
+//
+//        val registeredTargetsTextView: Button = binding.RegisteredTargetsTextView
+//        homeViewModel.registeredTargets.observe(viewLifecycleOwner) {
+//            registeredTargetsTextView.text = it
+//        }
+//
+//        val pastAttemptsTextView: Button = binding.PastAttemptsTextView
+//        homeViewModel.pastAttempts.observe(viewLifecycleOwner) {
+//            pastAttemptsTextView.text = it
+//        }
 
         // configure pieChart
         pieChart = root.findViewById(me.smoothhacker.swampsploit.R.id.pieChart)
         setPieChartData(pieChart)
-
 
         return root
     }
@@ -79,7 +79,7 @@ class HomeFragment : Fragment() {
     }
 
     // logic implemented from: https://www.geeksforgeeks.org/android-create-a-pie-chart-with-kotlin/
-    fun setPieChartData(pieChart: PieChart) {
+    private fun setPieChartData(pieChart: PieChart) {
         pieChart.setUsePercentValues(true)
         pieChart.description.isEnabled = false
         pieChart.setExtraOffsets(5f, 10f, 5f, 5f)

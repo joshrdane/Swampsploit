@@ -15,4 +15,8 @@
     <string name="exploit_proftpd">ProFTPd</string>
 
     <string name="reports_empty">No exploit engagements have been made.</string>
+    <string name="success">Success</string>
+    <string name="incomplete">Incomplete</string>
+    <string name="failure">Failure</string>
+    <string name="exploit_engagement_history">Exploit Engagement History</string>
 </resources>
