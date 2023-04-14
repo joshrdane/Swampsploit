@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import me.smoothhacker.swampsploit.auxilary.tcpScanner
+import me.smoothhacker.swampsploit.auxilary.TcpScanner
 import me.smoothhacker.swampsploit.databinding.FragmentHostScannerBinding
 import java.io.File
 
@@ -14,7 +14,7 @@ class HostScanner : Fragment() {
 
     private var _binding: FragmentHostScannerBinding? = null
     private val binding get() = _binding!!
-    private val tcpScanner: tcpScanner = tcpScanner()
+    private val tcpScanner: TcpScanner = TcpScanner()
     private var hostsListFile: File? = null
 
     override fun onCreateView(
@@ -22,8 +22,6 @@ class HostScanner : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val scannerViewModel = ViewModelProvider(this)[HostScannerViewModel::class.java]
-
         _binding = FragmentHostScannerBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
