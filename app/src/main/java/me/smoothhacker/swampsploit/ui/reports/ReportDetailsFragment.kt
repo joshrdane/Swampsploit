@@ -72,7 +72,6 @@ class ReportDetailsFragment : Fragment() {
             _binding!!.root.findViewById<FloatingActionButton>(me.smoothhacker.swampsploit.R.id.fab)
         shareButton.setOnClickListener {
             Thread {
-                // TODO: do this in separate thread
                 this.activity?.runOnUiThread {
                     Toast.makeText(
                         this.context,

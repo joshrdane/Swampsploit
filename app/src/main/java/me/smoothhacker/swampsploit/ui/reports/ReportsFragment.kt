@@ -44,17 +44,11 @@ class ReportsFragment : Fragment() {
         if (reports.getSize() == 0) {
             recentReport.text = me.smoothhacker.swampsploit.R.string.reports_empty.toString()
         } else {
-            /* TODO: grab date/time from most recent report and fill below text with fileList[0]
-            recentReport.text = "testing"
-            recentReport.setOnClickListener {
-                // launch new fragment to display report details
-                createChildFragment()
-            }*/
             for (i in 0 until reports.getSize()) {
                 val mainLayout = root.findViewById<LinearLayout>(me.smoothhacker.swampsploit.R.id.reports_dashboard)
                 val currReport: Report = reports.getReport(i)
                 val nextReport = TextView(this.context)
-                // TODO: grab date/time from second most recent report and fill text
+
                 nextReport.text = currReport.getTimestamp().toString() + currReport.getReportText()
                 nextReport.textSize = 16f
                 nextReport.gravity = Gravity.CENTER_VERTICAL
@@ -91,7 +85,6 @@ class ReportsFragment : Fragment() {
     }
 
     private fun createChildFragment(report: Report) {
-        // TODO: figure out how to pass report file to fragment constructor
         val nestedReportsFragment: Fragment = ReportDetailsFragment()
         val bundle = Bundle()
         bundle.putSerializable("report", report)
