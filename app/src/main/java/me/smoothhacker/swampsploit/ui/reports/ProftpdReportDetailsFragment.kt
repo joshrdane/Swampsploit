@@ -10,6 +10,7 @@ import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -58,8 +59,18 @@ class ProftpdReportDetailsFragment : Fragment() {
         val bundle = this.requireArguments()
         this.report = bundle.getSerializable("report", Report::class.java)!!
         _binding = FragmentProftpdReportDetailsBinding.inflate(inflater, container, false)
+        val root: View = binding.root
 
-        // TODO: display report details
+        val reportContents: TextView =
+            root.findViewById(me.smoothhacker.swampsploit.R.id.report_contents)
+
+        reportContents.text = String.format(
+            "Selected exploit: %s\nSelected payload: %s\nTime completed: %s\nExecution status: %s",
+            this.report.getSelectedExploit().toString(),
+            "`touch PoC file`",
+            this.report.getTimestamp().toString(),
+            this.report.getWasSuccess().toString(),
+        )
 
         // Set & ask for permissions to share report externally
         val appPerms = arrayOf(
