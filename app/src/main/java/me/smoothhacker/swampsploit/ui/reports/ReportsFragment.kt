@@ -35,6 +35,7 @@ class ReportsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
+        reports.saveReportsToDownloads()
 
         _binding = FragmentReportsBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -46,7 +47,7 @@ class ReportsFragment : Fragment() {
             root.findViewById(me.smoothhacker.swampsploit.R.id.recentReport)
 
         if (reports.getSize() == 0) {
-            recentReport.text = me.smoothhacker.swampsploit.R.string.reports_empty.toString()
+            recentReport.text = getString(me.smoothhacker.swampsploit.R.string.reports_empty)
         } else {
             recentReport.text = String.format(
             "%s %s", reports.getReport(0).getTimestamp().toString(), reports.getReport(0).getReportText()

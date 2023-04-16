@@ -1,5 +1,6 @@
 package me.smoothhacker.swampsploit.utils
 
+import android.util.Log
 import me.smoothhacker.swampsploit.ui.exploit.SelectedExploit
 import me.smoothhacker.swampsploit.exploit.Payload
 import java.io.*
@@ -68,17 +69,18 @@ class Reports(downloadsDir: File) {
 
     init {
         // Check if files exist in downloads dir
-        downloadsDir.listFiles()?.forEach {
+        /*downloadsDir.listFiles()?.forEach {
             val reportFileIn = FileInputStream(it)
             val inptStream = ObjectInputStream(reportFileIn)
             val report: Report = inptStream.readObject() as Report
             this.addReport(report)
-        }
+        }*/
         this.downloadsDir = downloadsDir
     }
 
     fun saveReportsToDownloads() {
         this.reportList.forEach {
+            Log.wtf("swampsploit", "Saving report to: %s".format(this.downloadsDir.absolutePath.plus(it.getName())) )
             val fileOut = FileOutputStream(this.downloadsDir.absolutePath.plus(it.getName()))
             val out = ObjectOutputStream(fileOut)
             out.writeObject(it)
