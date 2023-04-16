@@ -8,9 +8,10 @@ import java.net.Socket
 import java.net.SocketException
 
 
-class tcpScanner {
+class TcpScanner {
     private val hostList: ArrayList<String> = ArrayList()
     private var targetPort: Int = 22
+    private var hasFailed: Boolean = false
 
     fun addHost(host: String) {
         this.hostList.add(host)
@@ -43,7 +44,12 @@ class tcpScanner {
 
         // check for networks that have more than 64k hosts
         if (32 - ipInterface.networkPrefixLength > 24) return false
-        val utils = SubnetUtils("%s/%d".format(ipInterface.address.hostAddress, 32 - ipInterface.networkPrefixLength))
+        val utils = SubnetUtils(
+            "%s/%d".format(
+                ipInterface.address.hostAddress,
+                32 - ipInterface.networkPrefixLength
+            )
+        )
 
         Thread {
             for (ip in utils.info.allAddresses) {
@@ -51,14 +57,13 @@ class tcpScanner {
                     val socket = Socket(ip, targetPort)
                     socket.close()
                 } catch (ex: Exception) {
-                    println("%s failed to connect".format(ip))
+                    this.hasFailed = true
+                    //println("%s failed to connect".format(ip))
                     continue
                 }
                 hostList.add(ip)
             }
-
-
         }.start()
-        return true
+        return this.hasFailed
     }
 }
