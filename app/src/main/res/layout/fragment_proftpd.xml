@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <CheckBox
-        android:id="@+id/chk1"
+        android:id="@+id/listVolumes"
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:paddingLeft="10dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/payload_header" />
 
     <CheckBox
-        android:id="@+id/chk2"
+        android:id="@+id/listAllVolContents"
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:paddingLeft="10dp"
@@ -74,9 +74,9 @@
         android:textStyle="italic"
         android:textColor="@color/navyGreen"
         android:background="@drawable/rounded_teal_textview"
-        app:layout_constraintEnd_toEndOf="@+id/chk1"
-        app:layout_constraintStart_toStartOf="@+id/chk1"
-        app:layout_constraintTop_toBottomOf="@+id/chk1" />
+        app:layout_constraintEnd_toEndOf="@+id/listVolumes"
+        app:layout_constraintStart_toStartOf="@+id/listVolumes"
+        app:layout_constraintTop_toBottomOf="@+id/listVolumes" />
 
     <TextView
         android:id="@+id/parameter_header"
@@ -90,7 +90,7 @@
         android:background="@drawable/rounded_light_maroon_textview"
         app:layout_constraintEnd_toEndOf="@+id/payload_header"
         app:layout_constraintStart_toStartOf="@+id/payload_header"
-        app:layout_constraintTop_toBottomOf="@+id/chk2" />
+        app:layout_constraintTop_toBottomOf="@+id/listAllVolContents" />
 
     <EditText
         android:id="@+id/ip_address_input"

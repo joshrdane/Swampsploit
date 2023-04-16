@@ -51,35 +51,34 @@
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <CheckBox
-        android:id="@+id/chk1"
+        android:id="@+id/listVolumes"
         android:layout_width="215dp"
         android:layout_height="35dp"
+        android:layout_margin="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_teal_textview"
         android:checked="true"
-        android:text="@string/open_unauthorized_session"
         android:paddingLeft="10dp"
-        android:layout_margin="5dp"
-        android:textStyle="italic"
+        android:text="@string/list_volumes"
         android:textColor="@color/navyGreen"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="@+id/payload_header"
         app:layout_constraintTop_toBottomOf="@+id/payload_header" />
 
     <CheckBox
-        android:id="@+id/chk2"
+        android:id="@+id/listAllVolContents"
         android:layout_width="215dp"
         android:layout_height="35dp"
+        android:layout_margin="5dp"
         android:background="@drawable/rounded_teal_textview"
         android:checked="false"
-        android:text="TBD"
         android:paddingLeft="10dp"
-        android:layout_margin="5dp"
-        android:textStyle="italic"
+        android:text="@string/list_all_vol_content"
         android:textColor="@color/navyGreen"
-        app:layout_constraintStart_toStartOf="@+id/chk1"
-        app:layout_constraintTop_toBottomOf="@+id/chk1"
-        app:layout_constraintEnd_toEndOf="@+id/chk1" />
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/listVolumes"
+        app:layout_constraintStart_toStartOf="@+id/listVolumes"
+        app:layout_constraintTop_toBottomOf="@+id/listVolumes" />
 
     <TextView
         android:id="@+id/parameter_header"
@@ -93,7 +92,7 @@
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="@+id/payload_header"
         app:layout_constraintStart_toStartOf="@+id/payload_header"
-        app:layout_constraintTop_toBottomOf="@+id/chk2" />
+        app:layout_constraintTop_toBottomOf="@+id/listAllVolContents" />
 
     <EditText
         android:id="@+id/ip_address_input"
