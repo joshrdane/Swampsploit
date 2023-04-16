@@ -15,10 +15,12 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.ui.AppBarConfiguration
 import me.smoothhacker.swampsploit.R
 import me.smoothhacker.swampsploit.databinding.FragmentReportsBinding
+import me.smoothhacker.swampsploit.exploit.Payload
 import me.smoothhacker.swampsploit.ui.exploit.SelectedExploit
 import me.smoothhacker.swampsploit.utils.Report
 import me.smoothhacker.swampsploit.utils.Reports
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class ReportsFragment : Fragment() {
@@ -35,6 +37,14 @@ class ReportsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
+
+        var logList: ArrayList<String> = ArrayList()
+        logList.add("Connected")
+        logList.add("Volume extracted")
+        logList.add("Disconnected")
+
+        reports.addReport(Report(SelectedExploit.NETATALK, Payload(bytes = "List Volume".toByteArray()),true, "Run #1: executed", Date(), false, logList))
+
         reports.saveReportsToDownloads()
 
         _binding = FragmentReportsBinding.inflate(inflater, container, false)
