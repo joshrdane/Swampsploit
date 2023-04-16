@@ -108,9 +108,8 @@ class ReportsFragment : Fragment() {
     fun createChildFragment(report: Report) {
         val bundle = Bundle()
         bundle.putSerializable("report", report)
+
         var childFrag: Fragment? = null
-
-
         val exploit = report.getSelectedExploit()
 
         if (exploit.name == "Proftpd") {
@@ -124,7 +123,7 @@ class ReportsFragment : Fragment() {
         val childFragTrans: FragmentTransaction = childFragMan.beginTransaction()
 
 
-        childFragTrans.replace(me.smoothhacker.swampsploit.R.id.child_fragment_container, childFrag)
+        childFragTrans.replace(me.smoothhacker.swampsploit.R.id.child_fragment_container, childFrag::class.java, bundle)
         childFragTrans.addToBackStack(null)
         childFragTrans.commit()
     }

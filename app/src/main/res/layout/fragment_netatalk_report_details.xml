@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/description_header"
-        android:layout_width="400dp"
+        android:layout_width="375dp"
         android:layout_height="30dp"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_light_maroon_textview"
@@ -17,7 +17,35 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+        android:id="@+id/report_contents"
+        android:layout_width="375dp"
+        android:layout_height="400dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_pink_textview"
+        android:paddingLeft="10dp"
+        android:textColor="@color/maroon"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="@+id/description_header"
+        app:layout_constraintStart_toStartOf="@+id/description_header"
+        app:layout_constraintTop_toBottomOf="@+id/description_header" />
+    <TextView
+        android:id="@+id/report_log"
+        android:layout_width="375dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_pink_textview"
+        android:paddingLeft="10dp"
+        android:textColor="@color/maroon"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="@+id/report_contents"
+        app:layout_constraintStart_toStartOf="@+id/report_contents"
+        app:layout_constraintTop_toBottomOf="@+id/report_contents" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
