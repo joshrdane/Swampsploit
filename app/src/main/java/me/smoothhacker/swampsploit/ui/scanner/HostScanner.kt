@@ -41,6 +41,7 @@ class HostScanner : Fragment() {
 
         hostsListFile = File(context?.dataDir, "hosts_list.dat")
         val ctx = ExploitContext(context?.dataDir!!.path.toString())
+        ctx.create()
         if (hostsListFile!!.exists())
             hostsListFile!!.forEachLine { tcpScanner.addHost(it); ctx.addHost(it); }
         ctx.save()
