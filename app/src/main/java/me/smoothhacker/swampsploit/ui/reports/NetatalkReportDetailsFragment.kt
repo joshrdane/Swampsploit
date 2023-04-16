@@ -16,14 +16,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import me.smoothhacker.swampsploit.databinding.FragmentReportDetailsBinding
+import me.smoothhacker.swampsploit.databinding.FragmentNetatalkReportDetailsBinding
 import me.smoothhacker.swampsploit.utils.Report
 import java.io.File
 
 
 class NetatalkReportDetailsFragment : Fragment() {
 
-    private var _binding: FragmentReportDetailsBinding? = null
+    private var _binding: FragmentNetatalkReportDetailsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -58,7 +58,7 @@ class NetatalkReportDetailsFragment : Fragment() {
         // Get report from bundle
         val bundle = this.requireArguments()
         this.report = bundle.getSerializable("report", Report::class.java)!!
-        _binding = FragmentReportDetailsBinding.inflate(inflater, container, false)
+        _binding = FragmentNetatalkReportDetailsBinding.inflate(inflater, container, false)
 
         // TODO: display report details
 

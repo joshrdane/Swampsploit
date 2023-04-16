@@ -5,16 +5,17 @@
     android:id="@+id/reports_dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingLeft="2.5dp"
     android:paddingRight="2.5dp"
-    android:orientation="vertical"
     tools:context=".ui.reports.ReportsFragment">
 
     <TextView
         android:id="@+id/sortBy"
         android:layout_width="400dp"
-        android:layout_height="33dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
+        android:layout_marginBottom="645dp"
         android:background="@drawable/rounded_light_maroon_textview"
         android:drawableRight="@drawable/baseline_sort_white_24dp"
         android:drawablePadding="5.0dp"
@@ -27,7 +28,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/recentReport"
@@ -40,16 +41,22 @@
         android:text="temporarily blank"
         android:textColor="@color/navyGreen"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/sortBy"
         app:layout_constraintEnd_toEndOf="@+id/sortBy"
+        app:layout_constraintStart_toStartOf="@+id/sortBy"
         app:layout_constraintTop_toBottomOf="@+id/sortBy" />
 
-        <FrameLayout
-            android:id="@+id/child_fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/child_fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        </FrameLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

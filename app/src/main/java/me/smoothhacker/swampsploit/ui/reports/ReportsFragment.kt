@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.ui.AppBarConfiguration
+import me.smoothhacker.swampsploit.R
 import me.smoothhacker.swampsploit.databinding.FragmentReportsBinding
 import me.smoothhacker.swampsploit.ui.exploit.SelectedExploit
 import me.smoothhacker.swampsploit.utils.Report
@@ -102,13 +105,24 @@ class ReportsFragment : Fragment() {
         _binding = null
     }
 
-    fun createChildFragment(report: Report, selectedExploit: SelectedExploit) {
+    fun createChildFragment(report: Report) {
         val bundle = Bundle()
         bundle.putSerializable("report", report)
+        var childFrag: Fragment? = null
 
-        val childFrag = ProFTPDReportDetailsFragment()
+
+        val exploit = report.getSelectedExploit()
+
+        if (exploit.name == "Proftpd") {
+            childFrag = ProftpdReportDetailsFragment()
+        }
+        else {
+            childFrag = NetatalkReportDetailsFragment()
+        }
+
         val childFragMan: FragmentManager = childFragmentManager
         val childFragTrans: FragmentTransaction = childFragMan.beginTransaction()
+
 
         childFragTrans.replace(me.smoothhacker.swampsploit.R.id.child_fragment_container, childFrag)
         childFragTrans.addToBackStack(null)

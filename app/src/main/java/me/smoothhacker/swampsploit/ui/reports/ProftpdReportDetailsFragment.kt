@@ -16,14 +16,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import me.smoothhacker.swampsploit.databinding.FragmentReportDetailsBinding
+import me.smoothhacker.swampsploit.databinding.FragmentProftpdReportDetailsBinding
 import me.smoothhacker.swampsploit.utils.Report
 import java.io.File
 
 
-class ProFTPDReportDetailsFragment : Fragment() {
-
-    private var _binding: FragmentReportDetailsBinding? = null
+class ProftpdReportDetailsFragment : Fragment() {
+    private var _binding: FragmentProftpdReportDetailsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -58,7 +57,7 @@ class ProFTPDReportDetailsFragment : Fragment() {
         // Get report from bundle
         val bundle = this.requireArguments()
         this.report = bundle.getSerializable("report", Report::class.java)!!
-        _binding = FragmentReportDetailsBinding.inflate(inflater, container, false)
+        _binding = FragmentProftpdReportDetailsBinding.inflate(inflater, container, false)
 
         // TODO: display report details
 
@@ -101,7 +100,7 @@ class ProFTPDReportDetailsFragment : Fragment() {
     fun onBackPressed() {
         // Catch back action and pops from backstack
         if (requireActivity().supportFragmentManager.backStackEntryCount > 0){
-            requireActivity().supportFragmentManager.popBackStack();
+            requireActivity().supportFragmentManager.popBackStack()
         }
         else {
             requireActivity().onBackPressedDispatcher.onBackPressed()
