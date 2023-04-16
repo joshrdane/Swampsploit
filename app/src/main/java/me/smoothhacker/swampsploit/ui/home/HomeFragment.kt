@@ -3,10 +3,10 @@ package me.smoothhacker.swampsploit.ui.home
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -16,8 +16,11 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
+import com.github.mikephil.charting.utils.ColorTemplate
 import com.github.mikephil.charting.utils.MPPointF
 import me.smoothhacker.swampsploit.databinding.FragmentHomeBinding
+import me.smoothhacker.swampsploit.utils.Reports
+
 
 class HomeFragment : Fragment() {
 
@@ -114,10 +117,12 @@ class HomeFragment : Fragment() {
         // on below line we are creating array list and
         // adding data to it to display in pie chart
         val entries: ArrayList<PieEntry> = ArrayList()
-        // TODO: extract exploit history to add below
-        entries.add(PieEntry(70f))
-        entries.add(PieEntry(20f))
-        entries.add(PieEntry(10f))
+
+        // Create Reports object
+        val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
+        entries.add(PieEntry(reports.getPercentageSucess(), "Success"))
+        entries.add(PieEntry(reports.getPercentageIncomplete(), "Incomplete"))
+        entries.add(PieEntry(reports.getPercentageFailure(), "Failure"))
 
         // set pie data set
         val dataSet = PieDataSet(entries, "Mobile OS")
@@ -130,10 +135,7 @@ class HomeFragment : Fragment() {
 
         // add a lot of colors to list
         val colors: ArrayList<Int> = ArrayList()
-        colors.add(me.smoothhacker.swampsploit.R.color.green)
-        colors.add(me.smoothhacker.swampsploit.R.color.yellow)
-        colors.add(me.smoothhacker.swampsploit.R.color.dustyRed)
-
+        for (c in ColorTemplate.PASTEL_COLORS) colors.add(c)
         dataSet.colors = colors
 
         // set pie data set

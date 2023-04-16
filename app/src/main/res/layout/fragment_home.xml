@@ -123,7 +123,7 @@
         app:layout_constraintStart_toStartOf="@id/idTVHead"
         app:layout_constraintTop_toBottomOf="@id/idTVHead" />
 
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="328dp"
         android:layout_height="76dp"
@@ -169,7 +169,7 @@
             android:textAlignment="center"
             app:drawableLeftCompat="@drawable/ic_circle"
             app:drawableTint="@color/dustyRed" />
-    </LinearLayout>
+    </LinearLayout>-->
 
     <TextView
         android:id="@+id/textView4"
@@ -180,7 +180,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.963" />
 
 
