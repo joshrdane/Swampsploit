@@ -1,7 +1,6 @@
 package me.smoothhacker.swampsploit.auxilary
 
 import org.apache.commons.net.util.SubnetUtils
-import java.io.File
 import java.net.Inet4Address
 import java.net.InterfaceAddress
 import java.net.NetworkInterface.getNetworkInterfaces
@@ -9,7 +8,7 @@ import java.net.Socket
 import java.net.SocketException
 
 
-class TcpScanner(private val dataDirPath: String) {
+class TcpScanner {
     private val hostList: ArrayList<String> = ArrayList()
     private var targetPort: Int = 22
     private var hasFailed: Boolean = false
@@ -66,14 +65,5 @@ class TcpScanner(private val dataDirPath: String) {
             }
         }.start()
         return this.hasFailed
-    }
-
-    fun save() {
-        val hostsListFile = File(dataDirPath, "hosts_list.dat")
-        hostsListFile.bufferedWriter().use { out ->
-            {
-                this.hostList.forEach { out.write(it) }
-            }
-        }
     }
 }
