@@ -15,7 +15,7 @@ class HostScanner : Fragment() {
 
     private var _binding: FragmentHostScannerBinding? = null
     private val binding get() = _binding!!
-    private val tcpScanner: TcpScanner = TcpScanner()
+    private val tcpScanner: TcpScanner = TcpScanner(context?.dataDir!!.path.toString())
     private var hostsListFile: File? = null
 
     override fun onCreateView(
@@ -54,6 +54,7 @@ class HostScanner : Fragment() {
         binding.buttonSetIP.setOnClickListener {
             tcpScanner.addHost(binding.editTextIpAddr.text.toString())
             binding.editTextIpAddr.text.clear()
+            tcpScanner.save()
         }
 
         return root
