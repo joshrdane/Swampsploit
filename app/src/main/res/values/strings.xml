@@ -24,6 +24,6 @@
     <string name="list_volumes">List volumes</string>
     <string name="list_all_vol_content">List all volume content</string>
     <string name="parameters">Parameters</string>
-    <string name="ip_address">IP Address</string>
+    <string name="ip_address">IP Address (Eg: 8.8.8.8) </string>
     <string name="exploit">Exploit</string>
 </resources>

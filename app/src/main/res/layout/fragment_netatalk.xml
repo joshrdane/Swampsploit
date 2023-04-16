@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="50dp"
     tools:context=".ui.exploit.ExploitActivity">
 
     <TextView
@@ -11,15 +12,14 @@
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="30dp"
         android:background="@drawable/rounded_light_maroon_textview"
+        android:paddingLeft="10dp"
         android:text="Description"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />/>
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/description"
@@ -96,7 +96,7 @@
 
     <EditText
         android:id="@+id/ip_address_input"
-        android:layout_width="303dp"
+        android:layout_width="160dp"
         android:layout_height="35dp"
         android:background="@drawable/rounded_pink_textview"
         android:ems="10"
@@ -111,7 +111,7 @@
 
     <EditText
         android:id="@+id/port_number_input"
-        android:layout_width="303dp"
+        android:layout_width="160dp"
         android:layout_height="35dp"
         android:background="@drawable/rounded_pink_textview"
         android:ems="10"
@@ -127,7 +127,7 @@
 
     <EditText
         android:id="@+id/timeout_input"
-        android:layout_width="303dp"
+        android:layout_width="160dp"
         android:layout_height="35dp"
         android:background="@drawable/rounded_pink_textview"
         android:ems="10"
@@ -142,11 +142,11 @@
 
     <EditText
         android:id="@+id/file_name_input"
-        android:layout_width="303dp"
+        android:layout_width="160dp"
         android:layout_height="35dp"
         android:background="@drawable/rounded_pink_textview"
         android:inputType="text"
-        android:text="File name (Eg. New File)"
+        android:text="File name (Eg: NewFile)"
         android:textSize="14dp"
         android:textStyle="italic"
         android:paddingLeft="10dp"

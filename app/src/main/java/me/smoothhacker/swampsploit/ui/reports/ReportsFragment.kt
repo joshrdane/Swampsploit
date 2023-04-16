@@ -35,9 +35,6 @@ class ReportsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
-        reports.addReport(Report(SelectedExploit.PROFTPD, true, "Run #1: executed", Date(), false))
-        reports.addReport(Report(SelectedExploit.NETATALK, false, "Run #3: Failed", Date(), false))
-        reports.addReport(Report(SelectedExploit.PROFTPD, false, "Run #30: success", Date(), false))
 
         _binding = FragmentReportsBinding.inflate(inflater, container, false)
         val root: View = binding.root
