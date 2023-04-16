@@ -6,7 +6,6 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
@@ -103,11 +102,11 @@ class ReportsFragment : Fragment() {
         _binding = null
     }
 
-    fun createChildFragment(report: Report) {
+    fun createChildFragment(report: Report, selectedExploit: SelectedExploit) {
         val bundle = Bundle()
         bundle.putSerializable("report", report)
 
-        val childFrag = ReportDetailsFragment()
+        val childFrag = ProFTPDReportDetailsFragment()
         val childFragMan: FragmentManager = childFragmentManager
         val childFragTrans: FragmentTransaction = childFragMan.beginTransaction()
 

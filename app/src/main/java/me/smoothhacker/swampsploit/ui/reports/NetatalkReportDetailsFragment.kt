@@ -21,7 +21,7 @@ import me.smoothhacker.swampsploit.utils.Report
 import java.io.File
 
 
-class ReportDetailsFragment : Fragment() {
+class NetatalkReportDetailsFragment : Fragment() {
 
     private var _binding: FragmentReportDetailsBinding? = null
 
