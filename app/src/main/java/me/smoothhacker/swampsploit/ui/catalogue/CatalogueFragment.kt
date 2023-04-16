@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import me.smoothhacker.swampsploit.databinding.FragmentExploitGalleryBinding
 import me.smoothhacker.swampsploit.ui.exploit.ExploitActivity
 
@@ -23,12 +22,8 @@ class CatalogueFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val catalogueViewModel =
-            ViewModelProvider(this)[CatalogueViewModel::class.java]
-
         _binding = FragmentExploitGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
 
         binding.ProFTPDButton.setOnClickListener {
             val proftpdIntent = Intent(this.context,  ExploitActivity::class.java)
@@ -41,11 +36,6 @@ class CatalogueFragment : Fragment() {
             netatalkIntent.putExtra("selectedExploit", "Netatalk")
             startActivity(netatalkIntent)
         }
-
-        /*val textView: TextView = binding.exploitText
-        catalogueViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }*/
         return root
     }
 

@@ -2,34 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reports_dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="2.5dp"
+    android:paddingRight="2.5dp"
     tools:context=".ui.reports.ReportsFragment">
 
     <TextView
         android:id="@+id/sortBy"
-        android:layout_width="415dp"
-        android:layout_height="35dp"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:background="@color/salmon"
+        android:layout_marginBottom="645dp"
+        android:background="@drawable/rounded_light_maroon_textview"
         android:drawableRight="@drawable/baseline_sort_white_24dp"
         android:drawablePadding="5.0dp"
-        android:text="Sort By"
+        android:paddingLeft="20dp"
+        android:paddingTop="2.5dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="2dp"
+        android:text="Sort by: recently completed"
         android:textColor="@color/white"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/recentReport"
-        android:layout_width="423dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="44dp"
-        android:background="@color/offWhite"
-        android:text="Thu Feb 16 2023 00:54:46 GMT-0500"
-        android:textColor="@color/maroon"
-        android:textSize="18sp"
+        android:layout_width="400dp"
+        android:layout_height="25dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_teal_textview"
+        android:paddingLeft="10dp"
+        android:paddingBottom="1.0dp"
+        android:text="temporarily blank"
+        android:textColor="@color/navyGreen"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/sortBy"
+        app:layout_constraintStart_toStartOf="@+id/sortBy"
+        app:layout_constraintTop_toBottomOf="@+id/sortBy" />
+
+    <FrameLayout
+        android:id="@+id/child_fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sortBy"
-        app:layout_constraintVertical_bias="0.361" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

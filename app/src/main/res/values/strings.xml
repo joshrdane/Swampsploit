@@ -13,4 +13,16 @@
     <string name="menu_hostscanner">Host Scanner</string>
 
     <string name="exploit_proftpd">ProFTPd</string>
+
+    <string name="reports_empty">No exploit engagements have been made.</string>
+    <string name="success">Success</string>
+    <string name="incomplete">Incomplete</string>
+    <string name="failure">Failure</string>
+    <string name="exploit_engagement_history">Exploit Engagement History</string>
+    <string name="touch_pocfile">`touch PoCFile`</string>
+    <string name="netatalk_description">The Apple Filing Protocol (AFP) server running on the remote host is affected by a remote code execution vulnerability due to a buffer overflow condition when handling an OpenSession request. \n\nAn unauthenticated, remote attacker can exploit this issue, via a specially crafted message, to execute arbitrary code.</string>
+    <string name="open_unauthorized_session">Open unauthorized session</string>
+    <string name="parameters">Parameters</string>
+    <string name="ip_address">IP Address</string>
+    <string name="exploit">Exploit</string>
 </resources>
