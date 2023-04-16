@@ -47,28 +47,6 @@ class HomeFragment : Fragment() {
             textView.text = it
         }
 
-        // Set Dashboard text
-        // TODO: change text dynamically? think about what to replace this with?
-//        val librarySizeTextView: Button = binding.LibrarySizeTextView
-//        homeViewModel.librarySize.observe(viewLifecycleOwner) {
-//           librarySizeTextView.text = it
-//        }
-//
-//        val payloadSizeTextview: Button = binding.PayloadSizeTextview
-//        homeViewModel.payloadSize.observe(viewLifecycleOwner) {
-//            payloadSizeTextview.text = it
-//        }
-//
-//        val registeredTargetsTextView: Button = binding.RegisteredTargetsTextView
-//        homeViewModel.registeredTargets.observe(viewLifecycleOwner) {
-//            registeredTargetsTextView.text = it
-//        }
-//
-//        val pastAttemptsTextView: Button = binding.PastAttemptsTextView
-//        homeViewModel.pastAttempts.observe(viewLifecycleOwner) {
-//            pastAttemptsTextView.text = it
-//        }
-
         // configure pieChart
         pieChart = root.findViewById(me.smoothhacker.swampsploit.R.id.pieChart)
         setPieChartData(pieChart)
@@ -120,7 +98,7 @@ class HomeFragment : Fragment() {
 
         // Create Reports object
         val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
-        entries.add(PieEntry(reports.getPercentageSucess(), "Success"))
+        entries.add(PieEntry(reports.getPercentageSuccess(), "Success"))
         entries.add(PieEntry(reports.getPercentageIncomplete(), "Incomplete"))
         entries.add(PieEntry(reports.getPercentageFailure(), "Failure"))
 

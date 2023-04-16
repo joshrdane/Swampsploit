@@ -97,5 +97,15 @@ class ReportDetailsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun onBackPressed() {
+        // Catch back action and pops from backstack
+        if (requireActivity().supportFragmentManager.backStackEntryCount > 0){
+            requireActivity().supportFragmentManager.popBackStack();
+        }
+        else {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+    }
 }
 

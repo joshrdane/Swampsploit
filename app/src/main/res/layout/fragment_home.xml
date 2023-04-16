@@ -6,94 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <!--    <TableLayout-->
-    <!--        android:id="@+id/tableLayout"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:layout_marginStart="1dp"-->
-    <!--        android:layout_marginTop="113dp"-->
-    <!--        android:layout_marginEnd="1dp"-->
-    <!--        android:layout_marginBottom="335dp"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/textView4"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="1.0"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
-
-    <!--        <TableRow-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="match_parent">-->
-
-    <!--            <android.widget.Space-->
-    <!--                android:layout_width="5dp"-->
-    <!--                android:layout_height="wrap_content" />-->
-
-    <!--            <Button-->
-    <!--                android:id="@+id/LibrarySizeTextView"-->
-    <!--                android:layout_width="150dp"-->
-    <!--                android:layout_height="120dp"-->
-    <!--                android:layout_marginLeft="20dp"-->
-    <!--                android:layout_marginRight="15dp"-->
-    <!--                android:clickable="false"-->
-    <!--                android:text="# \n\n exploits loaded in the library"-->
-    <!--                android:textAppearance="@style/TextAppearance.AppCompat.Body2"-->
-    <!--                tools:layout_editor_absoluteX="73dp"-->
-    <!--                tools:layout_editor_absoluteY="32dp" />-->
-
-    <!--            <Button-->
-    <!--                android:id="@+id/PayloadSizeTextview"-->
-    <!--                android:layout_width="150dp"-->
-    <!--                android:layout_height="120dp"-->
-    <!--                android:layout_marginLeft="15dp"-->
-    <!--                android:clickable="false"-->
-    <!--                android:text="# \n\n payloads loaded in the library"-->
-    <!--                android:textAppearance="@style/TextAppearance.AppCompat.Body2"-->
-    <!--                tools:layout_editor_absoluteX="73dp"-->
-    <!--                tools:layout_editor_absoluteY="32dp" />-->
-
-    <!--            <android.widget.Space-->
-    <!--                android:layout_width="5dp"-->
-    <!--                android:layout_height="wrap_content" />-->
-    <!--        </TableRow>-->
-
-    <!--        <TableRow-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="match_parent">-->
-
-    <!--            <android.widget.Space-->
-    <!--                android:layout_width="20dp"-->
-    <!--                android:layout_height="wrap_content" />-->
-
-    <!--            <Button-->
-    <!--                android:id="@+id/RegisteredTargetsTextView"-->
-    <!--                android:layout_width="150dp"-->
-    <!--                android:layout_height="120dp"-->
-    <!--                android:layout_marginLeft="20dp"-->
-    <!--                android:layout_marginRight="15dp"-->
-    <!--                android:clickable="false"-->
-    <!--                android:text="# \n\n targets available to exploit"-->
-    <!--                android:textAppearance="@style/TextAppearance.AppCompat.Body2"-->
-    <!--                tools:layout_editor_absoluteX="73dp"-->
-    <!--                tools:layout_editor_absoluteY="32dp" />-->
-
-    <!--            <Button-->
-    <!--                android:id="@+id/PastAttemptsTextView"-->
-    <!--                android:layout_width="150dp"-->
-    <!--                android:layout_height="120dp"-->
-    <!--                android:layout_marginLeft="15dp"-->
-    <!--                android:clickable="false"-->
-    <!--                android:text="# \n\n past attempts at exploitation"-->
-    <!--                android:textAppearance="@style/TextAppearance.AppCompat.Body2"-->
-    <!--                tools:layout_editor_absoluteX="73dp"-->
-    <!--                tools:layout_editor_absoluteY="32dp" />-->
-
-    <!--            <android.widget.Space-->
-    <!--                android:layout_width="20dp"-->
-    <!--                android:layout_height="wrap_content" />-->
-    <!--        </TableRow>-->
-
-    <!--    </TableLayout>-->
-
     <TextView
         android:id="@+id/idTVHead"
         android:layout_width="0dp"
@@ -123,7 +35,7 @@
         app:layout_constraintStart_toStartOf="@id/idTVHead"
         app:layout_constraintTop_toBottomOf="@id/idTVHead" />
 
-    <!--<LinearLayout
+    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="328dp"
         android:layout_height="76dp"
@@ -153,23 +65,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="4dp"
-            android:text="@string/incomplete"
-            android:textAlignment="center"
-            app:drawableLeftCompat="@drawable/ic_circle"
-            app:drawableTint="@color/yellow" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="4dp"
             android:text="@string/failure"
             android:textAlignment="center"
             app:drawableLeftCompat="@drawable/ic_circle"
             app:drawableTint="@color/dustyRed" />
-    </LinearLayout>-->
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView4"
