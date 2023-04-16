@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import me.smoothhacker.swampsploit.auxilary.TcpScanner
 import me.smoothhacker.swampsploit.databinding.FragmentHostScannerBinding
+import me.smoothhacker.swampsploit.utils.ExploitContext
 import java.io.File
 
 class HostScanner : Fragment() {
@@ -39,8 +40,10 @@ class HostScanner : Fragment() {
         }
 
         hostsListFile = File(context?.dataDir, "hosts_list.dat")
+        val ctx = ExploitContext(context?.dataDir!!.path.toString())
         if (hostsListFile!!.exists())
-            hostsListFile!!.forEachLine { tcpScanner.addHost(it) }
+            hostsListFile!!.forEachLine { tcpScanner.addHost(it); ctx.addHost(it); }
+        ctx.save()
 
         binding.buttonSetPort.setOnClickListener {
             tcpScanner.setTargetPort(binding.editTextPort.text.toString().toInt())
