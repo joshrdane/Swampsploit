@@ -12,10 +12,9 @@ import me.smoothhacker.swampsploit.utils.ExploitContext
 import java.io.File
 
 class HostScanner : Fragment() {
-
     private var _binding: FragmentHostScannerBinding? = null
     private val binding get() = _binding!!
-    private val tcpScanner: TcpScanner = TcpScanner(context?.dataDir!!.path.toString())
+    private lateinit var tcpScanner: TcpScanner
     private var hostsListFile: File? = null
 
     override fun onCreateView(
@@ -25,6 +24,7 @@ class HostScanner : Fragment() {
     ): View {
         _binding = FragmentHostScannerBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        this.tcpScanner = TcpScanner(context?.dataDir!!.path.toString())
 
         val scanButtonView = binding.button
         scanButtonView.setOnClickListener {
