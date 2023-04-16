@@ -1,11 +1,9 @@
 package me.smoothhacker.swampsploit.utils
 
 import me.smoothhacker.swampsploit.ui.exploit.SelectedExploit
-import java.io.File
-import java.io.FileInputStream
-import java.io.ObjectInputStream
-import java.io.Serializable
-import java.util.Date
+import java.io.*
+import java.util.*
+
 
 class Report(
     private var selectedExploit: SelectedExploit,
@@ -18,6 +16,10 @@ class Report(
 
     init {
         this.date = Date()
+    }
+
+    fun getName(): String {
+        return this.selectedExploit.name + this.timestamp.toString()
     }
 
     fun getReportText(): String {
@@ -43,6 +45,7 @@ class Report(
 
 class Reports(downloadsDir: File) {
     private var reportList: ArrayList<Report> = ArrayList()
+    private var downloadsDir: File
 
     init {
         // Check if files exist in downloads dir
@@ -52,9 +55,18 @@ class Reports(downloadsDir: File) {
             val report: Report = inptStream.readObject() as Report
             this.addReport(report)
         }
+        this.downloadsDir = downloadsDir
     }
 
-    fun saveReportsToDownloads() {}
+    fun saveReportsToDownloads() {
+        this.reportList.forEach {
+            val fileOut = FileOutputStream(this.downloadsDir.absolutePath.plus(it.getName()))
+            val out = ObjectOutputStream(fileOut)
+            out.writeObject(it)
+            out.close()
+            fileOut.close()
+        }
+    }
 
     fun getReport(i: Int): Report {
         return this.reportList[i]
@@ -68,7 +80,7 @@ class Reports(downloadsDir: File) {
         return this.reportList.size
     }
 
-    fun getPercentageSucess(): Float {
+    fun getPercentageSuccess(): Float {
         var successCount = 0f
         this.reportList.map { if (it.getWasSuccess()) successCount+=1; }
         return successCount / this.reportList.size

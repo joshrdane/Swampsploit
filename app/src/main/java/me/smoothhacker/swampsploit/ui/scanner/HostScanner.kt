@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import me.smoothhacker.swampsploit.auxilary.TcpScanner
 import me.smoothhacker.swampsploit.databinding.FragmentHostScannerBinding
 import java.io.File
@@ -26,7 +26,17 @@ class HostScanner : Fragment() {
         val root: View = binding.root
 
         val scanButtonView = binding.button
-        scanButtonView.setOnClickListener { tcpScanner.scanForHosts() }
+        scanButtonView.setOnClickListener {
+            if (tcpScanner.scanForHosts()) {
+                this.activity?.runOnUiThread {
+                    Toast.makeText(
+                        this.context,
+                        "Scanner Failed",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
 
         hostsListFile = File(context?.dataDir, "hosts_list.dat")
         if (hostsListFile!!.exists())
