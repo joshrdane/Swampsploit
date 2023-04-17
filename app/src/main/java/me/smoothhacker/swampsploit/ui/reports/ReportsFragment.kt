@@ -15,10 +15,12 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.ui.AppBarConfiguration
 import me.smoothhacker.swampsploit.R
 import me.smoothhacker.swampsploit.databinding.FragmentReportsBinding
+import me.smoothhacker.swampsploit.exploit.Payload
 import me.smoothhacker.swampsploit.ui.exploit.SelectedExploit
 import me.smoothhacker.swampsploit.utils.Report
 import me.smoothhacker.swampsploit.utils.Reports
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class ReportsFragment : Fragment() {
@@ -35,9 +37,15 @@ class ReportsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
-        reports.addReport(Report(SelectedExploit.PROFTPD, true, "Run #1: executed", Date(), false))
-        reports.addReport(Report(SelectedExploit.NETATALK, false, "Run #3: Failed", Date(), false))
-        reports.addReport(Report(SelectedExploit.PROFTPD, false, "Run #30: success", Date(), false))
+
+        var logList: ArrayList<String> = ArrayList()
+        logList.add("CONNECTED TO HOST")
+        logList.add("VOLUME EXTRACTED: FIND IN DOWNLOADS")
+        logList.add("DISCONNECTED FROM HOST")
+
+        reports.addReport(Report(SelectedExploit.NETATALK, Payload(bytes = "List Volume".toByteArray()),true, "Run #1: executed", Date(), false, logList))
+
+        reports.saveReportsToDownloads()
 
         _binding = FragmentReportsBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -49,7 +57,7 @@ class ReportsFragment : Fragment() {
             root.findViewById(me.smoothhacker.swampsploit.R.id.recentReport)
 
         if (reports.getSize() == 0) {
-            recentReport.text = me.smoothhacker.swampsploit.R.string.reports_empty.toString()
+            recentReport.text = getString(me.smoothhacker.swampsploit.R.string.reports_empty)
         } else {
             recentReport.text = String.format(
             "%s %s", reports.getReport(0).getTimestamp().toString(), reports.getReport(0).getReportText()
@@ -122,8 +130,7 @@ class ReportsFragment : Fragment() {
         val childFragMan: FragmentManager = childFragmentManager
         val childFragTrans: FragmentTransaction = childFragMan.beginTransaction()
 
-
-        childFragTrans.replace(me.smoothhacker.swampsploit.R.id.child_fragment_container, childFrag::class.java, bundle)
+        childFragTrans.replace(R.id.child_fragment_container, childFrag::class.java, bundle)
         childFragTrans.addToBackStack(null)
         childFragTrans.commit()
     }

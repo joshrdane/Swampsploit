@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="50dp"
     tools:context=".ui.reports.NetatalkReportDetailsFragment">
 
     <TextView
@@ -23,7 +24,7 @@
         <TextView
         android:id="@+id/report_contents"
         android:layout_width="375dp"
-        android:layout_height="400dp"
+        android:layout_height="125dp"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_pink_textview"
         android:paddingLeft="10dp"
@@ -36,7 +37,7 @@
     <TextView
         android:id="@+id/report_log"
         android:layout_width="375dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_pink_textview"
         android:paddingLeft="10dp"

@@ -58,7 +58,7 @@ class NetatalkReportDetailsFragment : Fragment() {
     ): View {
         // Get report from bundle
         val bundle = this.requireArguments()
-        this.report = bundle.getSerializable("report", Report::class.java)!!
+        this.report = bundle.getSerializable("report") as Report
         _binding = FragmentNetatalkReportDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -68,7 +68,7 @@ class NetatalkReportDetailsFragment : Fragment() {
         reportContents.text = String.format(
             "Selected exploit: %s\nSelected payload: %s\nTime completed: %s\nExecution status: %s",
             this.report.getSelectedExploit().toString(),
-            "payload name",
+            this.report.getSelectedPayload().toString(),
             this.report.getTimestamp().toString(),
             this.report.getWasSuccess().toString(),
         )
@@ -77,6 +77,12 @@ class NetatalkReportDetailsFragment : Fragment() {
             root.findViewById(me.smoothhacker.swampsploit.R.id.report_log)
 
         reportLog.text = String.format("Execution log:\n")
+
+        for (i in 0 until this.report.getLogSize()) {
+            val currLogDisplay = reportLog.text.toString()
+            val currentLog = currLogDisplay + this.report.getLog(i)
+            reportLog.text = String.format("%s\n", currentLog)
+        }
 
         // Set & ask for permissions to share report externally
         val appPerms = arrayOf(
@@ -117,7 +123,7 @@ class NetatalkReportDetailsFragment : Fragment() {
     fun onBackPressed() {
         // Catch back action and pops from backstack
         if (requireActivity().supportFragmentManager.backStackEntryCount > 0){
-            requireActivity().supportFragmentManager.popBackStack();
+            requireActivity().supportFragmentManager.popBackStack()
         }
         else {
             requireActivity().onBackPressedDispatcher.onBackPressed()

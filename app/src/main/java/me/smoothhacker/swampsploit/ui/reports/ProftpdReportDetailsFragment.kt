@@ -67,7 +67,7 @@ class ProftpdReportDetailsFragment : Fragment() {
         reportContents.text = String.format(
             "Selected exploit: %s\nSelected payload: %s\nTime completed: %s\nExecution status: %s",
             this.report.getSelectedExploit().toString(),
-            "`touch PoC file`",
+            this.report.getSelectedPayload().toString(),
             this.report.getTimestamp().toString(),
             this.report.getWasSuccess().toString(),
         )

@@ -1,16 +1,21 @@
 package me.smoothhacker.swampsploit.utils
 
+import android.util.Log
 import me.smoothhacker.swampsploit.ui.exploit.SelectedExploit
+import me.smoothhacker.swampsploit.exploit.Payload
 import java.io.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class Report(
     private var selectedExploit: SelectedExploit,
+    private var selectedPayload: Payload,
     private var wasSuccess: Boolean,
     private var reportText: String,
     private var timestamp: Date,
-    private var isIncomplete: Boolean
+    private var isIncomplete: Boolean,
+    private var logList: ArrayList<String>
 ) : Serializable {
     private var date: Date = Date()
 
@@ -41,6 +46,21 @@ class Report(
     fun getWasIncomplete(): Boolean {
         return this.isIncomplete
     }
+
+    fun getSelectedPayload(): Payload {
+        return this.selectedPayload
+    }
+    fun setLog(logList: ArrayList<String>) {
+        this.logList = logList
+    }
+    fun getLogSize(): Int {
+        return this.logList.size
+    }
+    fun getLog(): ArrayList<String> {
+        return this.logList
+    }fun getLog(logVal: Int): String {
+        return this.logList[logVal]
+    }
 }
 
 class Reports(downloadsDir: File) {
@@ -49,17 +69,18 @@ class Reports(downloadsDir: File) {
 
     init {
         // Check if files exist in downloads dir
-        downloadsDir.listFiles()?.forEach {
+        /*downloadsDir.listFiles()?.forEach {
             val reportFileIn = FileInputStream(it)
             val inptStream = ObjectInputStream(reportFileIn)
             val report: Report = inptStream.readObject() as Report
             this.addReport(report)
-        }
+        }*/
         this.downloadsDir = downloadsDir
     }
 
     fun saveReportsToDownloads() {
         this.reportList.forEach {
+            Log.wtf("swampsploit", "Saving report to: %s".format(this.downloadsDir.absolutePath.plus(it.getName())) )
             val fileOut = FileOutputStream(this.downloadsDir.absolutePath.plus(it.getName()))
             val out = ObjectOutputStream(fileOut)
             out.writeObject(it)
@@ -97,4 +118,5 @@ class Reports(downloadsDir: File) {
         this.reportList.map { if (it.getWasIncomplete()) incompleteCount+=1; }
         return incompleteCount / this.reportList.size
     }
+
 }

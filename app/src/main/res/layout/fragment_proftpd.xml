@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="50dp"
     tools:context=".ui.exploit.ExploitActivity">
 
     <TextView
@@ -49,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <CheckBox
-        android:id="@+id/listVolumes"
+        android:id="@+id/chk1"
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:paddingLeft="10dp"
@@ -63,21 +64,6 @@
         app:layout_constraintStart_toStartOf="@+id/payload_header"
         app:layout_constraintTop_toBottomOf="@+id/payload_header" />
 
-    <CheckBox
-        android:id="@+id/listAllVolContents"
-        android:layout_width="140dp"
-        android:layout_height="35dp"
-        android:paddingLeft="10dp"
-        android:layout_margin="5dp"
-        android:checked="false"
-        android:text="TBD"
-        android:textStyle="italic"
-        android:textColor="@color/navyGreen"
-        android:background="@drawable/rounded_teal_textview"
-        app:layout_constraintEnd_toEndOf="@+id/listVolumes"
-        app:layout_constraintStart_toStartOf="@+id/listVolumes"
-        app:layout_constraintTop_toBottomOf="@+id/listVolumes" />
-
     <TextView
         android:id="@+id/parameter_header"
         android:layout_width="375dp"
@@ -90,11 +76,11 @@
         android:background="@drawable/rounded_light_maroon_textview"
         app:layout_constraintEnd_toEndOf="@+id/payload_header"
         app:layout_constraintStart_toStartOf="@+id/payload_header"
-        app:layout_constraintTop_toBottomOf="@+id/listAllVolContents" />
+        app:layout_constraintTop_toBottomOf="@+id/chk1" />
 
     <EditText
         android:id="@+id/ip_address_input"
-        android:layout_width="303dp"
+        android:layout_width="200dp"
         android:layout_height="35dp"
         android:layout_margin="5dp"
         android:background="@drawable/rounded_pink_textview"
@@ -109,7 +95,7 @@
 
     <EditText
         android:id="@+id/port_number_input"
-        android:layout_width="303dp"
+        android:layout_width="200dp"
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="number"
@@ -125,7 +111,7 @@
 
     <EditText
         android:id="@+id/timeout_input"
-        android:layout_width="303dp"
+        android:layout_width="200dp"
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="number"
@@ -139,7 +125,7 @@
 
     <EditText
         android:id="@+id/temp_path_input"
-        android:layout_width="303dp"
+        android:layout_width="200dp"
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="text"
@@ -154,7 +140,7 @@
 
     <EditText
         android:id="@+id/site_path_input"
-        android:layout_width="303dp"
+        android:layout_width="200dp"
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="text"
