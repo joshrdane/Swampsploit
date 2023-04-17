@@ -58,7 +58,7 @@ class NetatalkReportDetailsFragment : Fragment() {
     ): View {
         // Get report from bundle
         val bundle = this.requireArguments()
-        this.report = bundle.getSerializable("report", Report::class.java)!!
+        this.report = bundle.getSerializable("report") as Report
         _binding = FragmentNetatalkReportDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

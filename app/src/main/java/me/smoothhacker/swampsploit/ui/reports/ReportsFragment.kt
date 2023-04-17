@@ -130,8 +130,7 @@ class ReportsFragment : Fragment() {
         val childFragMan: FragmentManager = childFragmentManager
         val childFragTrans: FragmentTransaction = childFragMan.beginTransaction()
 
-
-        childFragTrans.replace(me.smoothhacker.swampsploit.R.id.child_fragment_container, childFrag::class.java, bundle)
+        childFragTrans.replace(R.id.child_fragment_container, childFrag::class.java, bundle)
         childFragTrans.addToBackStack(null)
         childFragTrans.commit()
     }
