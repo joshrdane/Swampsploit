@@ -39,9 +39,9 @@ class ReportsFragment : Fragment() {
         val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
 
         var logList: ArrayList<String> = ArrayList()
-        logList.add("Connected")
-        logList.add("Volume extracted")
-        logList.add("Disconnected")
+        logList.add("CONNECTED TO HOST")
+        logList.add("VOLUME EXTRACTED: FIND IN DOWNLOADS")
+        logList.add("DISCONNECTED FROM HOST")
 
         reports.addReport(Report(SelectedExploit.NETATALK, Payload(bytes = "List Volume".toByteArray()),true, "Run #1: executed", Date(), false, logList))
 
