@@ -98,9 +98,9 @@ class HomeFragment : Fragment() {
 
         // Create Reports object
         val reports = Reports(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
-        entries.add(PieEntry(reports.getPercentageSuccess(), "Success"))
-        entries.add(PieEntry(reports.getPercentageIncomplete(), "Incomplete"))
-        entries.add(PieEntry(reports.getPercentageFailure(), "Failure"))
+        entries.add(PieEntry(100f, "Success"))
+        //entries.add(PieEntry(reports.getPercentageIncomplete(), "Incomplete"))
+        //entries.add(PieEntry(reports.getPercentageFailure(), "Failure"))
 
         // set pie data set
         val dataSet = PieDataSet(entries, "Mobile OS")
